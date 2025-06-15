@@ -7,7 +7,7 @@ Summary:	An implementation of the TLS/SSL protocols
 Summary(pl.UTF-8):	Implementacja protokołów TLS/SSL
 Name:		s2n-tls
 Version:	1.5.21
-Release:	1
+Release:	2
 License:	Apache v2.0
 Group:		Libraries
 #Source0Download: https://github.com/aws/s2n-tls/releases
@@ -18,6 +18,7 @@ BuildRequires:	cmake >= 3.9
 BuildRequires:	openssl-devel
 BuildRequires:	rpm-build >= 4.6
 BuildRequires:	rpmbuild(macros) >= 1.605
+BuildRequires:	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -65,6 +66,8 @@ Dokumentacja API biblioteki AWS S2N.
 
 %prep
 %setup -q
+
+%{__sed} -i -e '/PATH_SUFFIXES/ s,lib64 lib$,%{_lib},' cmake/modules/Findcrypto.cmake
 
 %build
 install -d build
