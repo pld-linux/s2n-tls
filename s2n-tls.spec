@@ -6,13 +6,13 @@
 Summary:	An implementation of the TLS/SSL protocols
 Summary(pl.UTF-8):	Implementacja protokołów TLS/SSL
 Name:		s2n-tls
-Version:	1.7.3
+Version:	1.7.11
 Release:	1
 License:	Apache v2.0
 Group:		Libraries
 #Source0Download: https://github.com/aws/s2n-tls/releases
 Source0:	https://github.com/aws/s2n-tls/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	a93acb210b8e5d72205ed6a3f2df7b97
+# Source0-md5:	0db4c08ba38a1b6f704915818313d610
 URL:		https://github.com/aws/s2n-tls
 BuildRequires:	cmake >= 3.10
 BuildRequires:	openssl-devel
